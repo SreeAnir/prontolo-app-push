@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "645457142181",
-    "firebase_url": "https://prontoloapp.firebaseio.com",
-    "project_id": "prontoloapp",
-    "storage_bucket": "prontoloapp.appspot.com"
+    "project_number": "877821881839",
+    "firebase_url": "https://prontolo-df807.firebaseio.com",
+    "project_id": "prontolo-df807",
+    "storage_bucket": "prontolo-df807.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:645457142181:android:7f3b8c5d7e360f0a",
+        "mobilesdk_app_id": "1:877821881839:android:7f3b8c5d7e360f0a",
         "android_client_info": {
           "package_name": "com.prontolo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "645457142181-d1cu7kjqgbgc9oq6vquaa8oc3rbv4s2k.apps.googleusercontent.com",
+          "client_id": "877821881839-7vj1p4gjajh2s1tipgv4nvs70m2ur4l0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDTP58hlcHVWS-rqyjs4LvJ_ZHLNNGPOqA"
+          "current_key": "AIzaSyC3WC96ulFqDt2pZ_CTc8E7IgFdJJYEcx4"
         }
       ],
       "services": {

@@ -15,6 +15,8 @@ import Strings from "../../../res/strings/Strings";
 import { ApiCall } from "../../network/RestApi";
 import { OkAlert } from "../../util/OKAlert/OKAlert";
 import { setData, removeData } from "../../util/data/PreferenceData";
+import FCM, { NotificationActionType, FCMEvent } from "react-native-fcm";
+
 
 const BusyIndicator = require("react-native-busy-indicator");
 const loaderHandler = require("react-native-busy-indicator/LoaderHandler");
@@ -31,6 +33,11 @@ export default class Login extends Component {
  componentDidMount() {
     _this = this;
     loaderHandler.hideLoader();
+  }
+  getPushToken(){
+    FCM.getFCMToken().then(token => {
+      console.log("token token",token);
+     }); 
   }
   async loginApi() {
     removeData("cartProducts");

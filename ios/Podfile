@@ -9,6 +9,8 @@ target 'Prontolo' do
 
     
 
+    pod 'react-native-fcm', :path => '../node_modules/react-native-fcm'
+
     target 'ProntoloTests' do
     inherit! :search_paths
     # Pods for testing
