@@ -236,17 +236,13 @@ export default class Home extends Component {
       <View style={styles.parentContainer}>
         <View style={[styles.mainHeaderStyle, styles.inViewHeader]}>
           <View style={styles.logoContainer}>
-            <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate("Home", { token: "<new token>" })
-              }
-            >
+            <View >
               <Image
                 resizeMode="contain"
                 source={require("../../../res/images/logo.png")}
                 style={styles.logoImgStyle}
               />
-            </TouchableOpacity>
+            </View>
           </View>
           <View style={styles.iconsView}>
             <TouchableOpacity

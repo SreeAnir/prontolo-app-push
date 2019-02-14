@@ -114,6 +114,7 @@ export default (strings = new LocalizedStrings({
     failWalltetPay: "Non è stato possibile pagare con il Wallet",
     payment_process: "Pagamento in corso",
     set_partiva: "Devi prima inserire la tua Partita IVA nel profilo",
+    add_primary:"Aggiungi il tuo indirizzo principale per poter richiedere la fattura",
     successPayment: "Pagamento processato correttamente.",
     reviewPayment: "Non è stato possibile processare il pagamento",
     product_details_add: "AGGIUNGI",

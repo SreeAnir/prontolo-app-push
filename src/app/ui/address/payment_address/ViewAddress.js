@@ -15,7 +15,7 @@ import { EventRegister } from "react-native-event-listeners";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { ApiCall } from "../../../network/RestApi";
 import { OkAlert } from "../../../util/OKAlert/OKAlert";
-import { fetchData } from "../../../util/data/PreferenceData";
+import { fetchData ,setData } from "../../../util/data/PreferenceData";
 
 const BusyIndicator = require("react-native-busy-indicator");
 const loaderHandler = require("react-native-busy-indicator/LoaderHandler");
@@ -38,7 +38,8 @@ export default class ViewAddress extends Component {
     super();
     this.state = {
       addressObj: [],
-      dropPointObj: []
+      dropPointObj: [],
+      addressCount:0
     };
   }
   async fetchDataAddress() {
@@ -64,6 +65,7 @@ export default class ViewAddress extends Component {
       } `;
 
     let returnData = ApiCall(queryString, null).then(data => {
+      loaderHandler.hideLoader();
       ProfileData = data.response.profile;
       console.log("res", ProfileData);
       if (data.status == 1) {
@@ -73,12 +75,16 @@ export default class ViewAddress extends Component {
           this.setState({
             username: ProfileData.firstName + " " + ProfileData.familyName
           });
+          
+          setData( "addressCount" , ProfileData.shippingAddresses.length);
           this.setState({ addressObj: ProfileData.shippingAddresses });
         } else {
+          setData("addressCount" , 0);
           OkAlert("Failed", "");
         }
       } else {
         OkAlert("Failed", "");
+        setData( "addressCount" , 0 );
       }
     });
   }

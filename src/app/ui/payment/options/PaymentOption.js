@@ -41,7 +41,8 @@ export default class PaymentOption extends Component {
       paymentUrl: "",
       bearer: "",
       pay_item: "",
-      setPaymentMethod: ""
+      setPaymentMethod: "",
+      addressCount: 0
     };
   }
   async componentDidMount() {
@@ -49,6 +50,10 @@ export default class PaymentOption extends Component {
       return JSON.parse(bearer);
     });
     this.setState({ bearer: bearer });
+    let addressCount = await fetchData("addressCount").then(addressCount => {
+      return JSON.parse(addressCount);
+    });
+    this.setState({ addressCount: addressCount });
     _this = this;
     loaderHandler.showLoader(Strings.Processing); //
     await this.getCustomerProfile();
@@ -131,11 +136,16 @@ export default class PaymentOption extends Component {
     });
   }
   _setInvoiceRequire() {
-    if (this.state.partitaIva) {
-      this.setState({ invoiceRequired: !this.state.invoiceRequired });
-    } else {
+    if (this.state.addressCount == 0) {
       this.setState({ invoiceRequired: false });
-      OkAlert(Strings.set_partiva);
+      OkAlert(Strings.add_primary);
+    } else {
+      if (this.state.partitaIva) {
+        this.setState({ invoiceRequired: !this.state.invoiceRequired });
+      } else {
+        this.setState({ invoiceRequired: false });
+        OkAlert(Strings.set_partiva);
+      }
     }
   }
   async processPayment(pay_item) {
@@ -212,7 +222,7 @@ export default class PaymentOption extends Component {
       }
     });
   }
- 
+
   render() {
     let listItem = this.state.paymentMethod;
     if (listItem.length == 0 || listItem == -1) {
