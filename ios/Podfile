@@ -7,7 +7,9 @@ target 'Prontolo' do
 
   # Pods for Prontolo
 
-    
+    pod 'Firebase'
+    pod 'Firebase/Messaging'
+
 
     pod 'react-native-fcm', :path => '../node_modules/react-native-fcm'
 

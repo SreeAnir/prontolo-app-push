@@ -18,7 +18,7 @@ import { isEmpty } from "../../../util/tools/Utility";
 let listItem;
 let prodArray;
 let fullReached = 0;
-let loadAgain = null;
+// let loadAgain = null;
 let this_ = null;
 export default class catalogProducts extends Component {
   // static navigationOptions = ({ navigation }) => {
@@ -52,7 +52,7 @@ export default class catalogProducts extends Component {
   componentWillMount() {}
 
   componentDidMount() {
-    fullReached=0;
+    fullReached = 0;
     _this = this;
     favImage = [
       require("../../../../res/images/icon_fav.png"),
@@ -66,21 +66,30 @@ export default class catalogProducts extends Component {
     loaderHandler.showLoader(
       Strings.Searchingfor + " " + this.state.searchTerm
     ); //
+    this.intervalId=null;
   }
   __scrollProducts() {
     // this.setState({ loadingIcon: 1 });
     this.__loadMore();
   }
   __loadMore() {
-    if (fullReached == 1 || loadAgain != null) {
-      clearInterval(loadAgain);
+    if (fullReached == 1 || this.intervalId != null) {
+      clearInterval(this.intervalId);
+      console.log("Cleared",this.intervalId)
       this.setState({ loadingIcon: 0 });
     }
     if (fullReached == 0) {
       this.setState({ loadingIcon: 1 });
       lastIndex = this.state.catalogProduct.length;
-      arrayLeft = listItem;
-      arrayLeft = arrayLeft.splice(lastIndex, 10);
+      //arrayLeft = listItem;
+      
+      // if(typeof(listItem)=='undefined'){
+      //   console.log( "undefined" ,(listItem));
+      //   this.setState({ loadingIcon: 0 });
+      //   return false;
+      // }
+      arrayLeft = listItem.slice(lastIndex, (lastIndex+20) );
+      console.log("arrayLeft",arrayLeft);
       prodArray = this.state.catalogProduct;
       if (!isEmpty(arrayLeft)) {
         prodArray = prodArray.concat(arrayLeft);
@@ -89,14 +98,14 @@ export default class catalogProducts extends Component {
           "From " +
             this.state.catalogProduct.length +
             "rendered " +
-            (lastIndex + 10)
+            (lastIndex + 20)
         );
       } else {
         fullReached = 1;
         this.setState({ loadingIcon: 0 });
         console.log("Wow!Reached End of Products!!" + listItem.length);
       }
-    }else{
+    } else {
       this.setState({ loadingIcon: 0 });
     }
     // console.log("prodArray",prodArray);
@@ -120,17 +129,19 @@ export default class catalogProducts extends Component {
       if (data.status != 1) {
         loaderHandler.hideLoader();
       } else {
+       
         listItem = responseData.searchProducts;
-        prodArray = listItem.slice(0, 8);
+        prodArray = listItem.slice(0, 24);
         this.setState({ catalogProduct: prodArray });
         this_ = this;
-        loadAgain = setInterval(function() {
-          this_.__loadMore();
-          console.log("__loadMore")
-        }, 500);
         setTimeout(function() {
           loaderHandler.hideLoader();
-        }, 30);
+          this_.__loadMore();
+        }, 50);
+        this.intervalId = setInterval(function() {
+          this_.__loadMore();
+          console.log("__loadMore");
+        }, 500);
       }
     });
   }
@@ -160,11 +171,19 @@ export default class catalogProducts extends Component {
         loaderHandler.hideLoader();
         OkAlert(Strings.Error, responseData.errors[0].message);
       } else {
-        let catalogProduct = responseData.getProductsBySubcategory;
-        this.setState({ catalogProduct: catalogProduct });
+       // loaderHandler.hideLoader();
+        listItem = responseData.getProductsBySubcategory;
+        prodArray = listItem.slice(0, 24);
+        this.setState({ catalogProduct: prodArray });
+        this_ = this;
         setTimeout(function() {
+          this_.__loadMore();
           loaderHandler.hideLoader();
-        }, 30);
+        }, 50);
+        this.intervalId = setInterval(function() {
+          this_.__loadMore();
+          console.log("__loadMore");
+        }, 500);
       }
     });
   }
@@ -192,7 +211,7 @@ export default class catalogProducts extends Component {
     EventRegister.emit("phoneCallbuttonPressed");
   }
   setGoback() {
-    if (this.props.navigation.state.params.onUpdate != "undefined") {
+    if (typeof this.props.navigation.state.params.onUpdate != "undefined") {
       this.props.navigation.state.params.onUpdate();
     }
     this.props.navigation.goBack();

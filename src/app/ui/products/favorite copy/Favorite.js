@@ -91,11 +91,11 @@ export default class Favorite extends Component {
                         style={styles.fav_style}
                         onPress={() => this._changeFavorite(item)}
                       >
-                        <Image
+                        {/* <Image
                           style={styles.fav_style_icon}
                           resizeMode={"contain"}
                           source={require("../../../../res/images/icon_fav.png")}
-                        />
+                        /> */}
                       </TouchableOpacity>
                       <TouchableOpacity onPress={() => this._onClick(item)}>
                         <ImageBackground

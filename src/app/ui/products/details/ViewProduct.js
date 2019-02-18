@@ -120,7 +120,7 @@ export default class ViewProduct extends Component {
     // setData("customerOrderId",product);
   }
   setGoback() {
-    if (this.props.navigation.state.params.onUpdate != "undefined") {
+    if (typeof( this.props.navigation.state.params.onUpdate) != "undefined") {
       this.props.navigation.state.params.onUpdate();
     }
     this.props.navigation.goBack();
@@ -194,11 +194,11 @@ export default class ViewProduct extends Component {
         {productDetails != "" && productDetails != -1 ? (
           <ScrollView>
             <View style={styles.container}>
-              <Image
+              {/* <Image
                 style={styles.fav_style}
                 resizeMode={"contain"}
                 source={require("../../../../res/images/icon_fav.png")}
-              />
+              /> */}
             </View>
             <View style={styles.swiperContainer}>
               <Swiper
@@ -275,8 +275,6 @@ export default class ViewProduct extends Component {
                 {productDetails.description}
               </Text>
             </View>
-            {productDetails.categoryId == 1 ||
-            productDetails.categoryId == 3 ? (
               <View>
                 {productDetails.ingredients != null ? (
                   <View>
@@ -311,9 +309,6 @@ export default class ViewProduct extends Component {
                   <View />
                 )}
               </View>
-            ) : (
-              <View />
-            )}
             <View />
           </ScrollView>
         ) : (

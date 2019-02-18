@@ -35,8 +35,6 @@
 		2DCD954D1E0B4F2C00145EB5 /* ProntoloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ProntoloTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		33C59FD744B44CB38662F10B /* libReactNativeLocalization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE4FAD18172429FA8D1733F /* libReactNativeLocalization.a */; };
-		580F312321EF3D0D0068CBC6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 580F312221EF3D0D0068CBC6 /* GoogleService-Info.plist */; };
-		580F312421EF3D0D0068CBC6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 580F312221EF3D0D0068CBC6 /* GoogleService-Info.plist */; };
 		581F5B7121FEDDCE00948085 /* lato_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 581F5B6E21FEDDC900948085 /* lato_bold.ttf */; };
 		581F5B7221FEDDCE00948085 /* lato_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 581F5B6D21FEDDC900948085 /* lato_light.ttf */; };
 		581F5B7321FEDDCE00948085 /* lato_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 581F5B6C21FEDDC900948085 /* lato_medium.ttf */; };
@@ -48,6 +46,7 @@
 		581F5B7921FEDDCE00948085 /* lato_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 581F5B6F21FEDDC900948085 /* lato_regular.ttf */; };
 		581F5B7A21FEDDCE00948085 /* lato_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 581F5B7021FEDDC900948085 /* lato_semibold.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		8B281C7F2215A758001325F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B281C7E2215A758001325F5 /* GoogleService-Info.plist */; };
 		8B95319C2201F9610008FE7D /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B95319B2201F9610008FE7D /* libReact.a */; };
 		8B95319D2201F9610008FE7D /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		8B9F402621C10C15007EE94A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9F402521C10C15007EE94A /* UIKit.framework */; };
@@ -376,7 +375,6 @@
 		2D02E4901E0B4A5D006451C7 /* Prontolo-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prontolo-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE4FAD18172429FA8D1733F /* libReactNativeLocalization.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeLocalization.a; sourceTree = "<group>"; };
-		580F312221EF3D0D0068CBC6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		580F315A21EF413C0068CBC6 /* Prontolo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Prontolo.entitlements; path = Prontolo/Prontolo.entitlements; sourceTree = "<group>"; };
 		581F5B6C21FEDDC900948085 /* lato_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_medium.ttf; sourceTree = "<group>"; };
 		581F5B6D21FEDDC900948085 /* lato_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_light.ttf; sourceTree = "<group>"; };
@@ -391,6 +389,7 @@
 		74AD9DBB71ABACCD6F7B1107 /* Pods-Prontolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prontolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prontolo/Pods-Prontolo.release.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		8B281C7E2215A758001325F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B79CD6521C1159E005E4414 /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B95319B2201F9610008FE7D /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9F402521C10C15007EE94A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -549,11 +548,11 @@
 			children = (
 				580F315A21EF413C0068CBC6 /* Prontolo.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				8B281C7E2215A758001325F5 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				580F312221EF3D0D0068CBC6 /* GoogleService-Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -1204,7 +1203,6 @@
 			files = (
 				581F5B7721FEDDCE00948085 /* lato_light.ttf in Resources */,
 				581F5B7A21FEDDCE00948085 /* lato_semibold.ttf in Resources */,
-				580F312421EF3D0D0068CBC6 /* GoogleService-Info.plist in Resources */,
 				581F5B7621FEDDCE00948085 /* lato_bold.ttf in Resources */,
 				581F5B7821FEDDCE00948085 /* lato_medium.ttf in Resources */,
 				581F5B7921FEDDCE00948085 /* lato_regular.ttf in Resources */,
@@ -1216,10 +1214,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8B281C7F2215A758001325F5 /* GoogleService-Info.plist in Resources */,
 				581F5B7421FEDDCE00948085 /* lato_regular.ttf in Resources */,
 				581F5B7121FEDDCE00948085 /* lato_bold.ttf in Resources */,
 				581F5B7521FEDDCE00948085 /* lato_semibold.ttf in Resources */,
-				580F312321EF3D0D0068CBC6 /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				581F5B7221FEDDCE00948085 /* lato_light.ttf in Resources */,
 				581F5B7321FEDDCE00948085 /* lato_medium.ttf in Resources */,
@@ -1467,6 +1465,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-localization",
 					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = Prontolo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1498,6 +1497,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-localization",
 					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = Prontolo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

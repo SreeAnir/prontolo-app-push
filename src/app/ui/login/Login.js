@@ -34,11 +34,11 @@ export default class Login extends Component {
     _this = this;
     loaderHandler.hideLoader();
   }
-  getPushToken(){
-    FCM.getFCMToken().then(token => {
-      console.log("token token",token);
-     }); 
-  }
+  // getPushToken(){
+  //   FCM.getFCMToken().then(token => {
+  //     console.log("token token",token);
+  //    }); 
+  // }
   async loginApi() {
     removeData("cartProducts");
     removeData("customerOrder");

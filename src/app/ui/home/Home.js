@@ -8,10 +8,10 @@ import {
   TextInput,
   Platform,
   FlatList,
-  Alert,
   AsyncStorage,
   I18nManager
 } from "react-native";
+import { OkAlert } from "../../util/OKAlert/OKAlert";
 import { NavigationActions, StackActions } from "react-navigation";
 
 import styles from "./Style";
@@ -92,8 +92,10 @@ export default class Home extends Component {
       this.setState({ product_search: 0 });
       let responseData = data.response;
       if (data.status != 1) {
-        alert("No Products Found");
+        loaderHandler.hideLoader()
+        //  alert("No Products Found");
       } else {
+        loaderHandler.hideLoader();
         listItemProduct = responseData.homeProducts;
         console.log("homeProducts", responseData.homeProducts);
         this.setState({ productDetail: listItemProduct });
@@ -107,7 +109,7 @@ export default class Home extends Component {
     if (term == "") {
       await this._loadProducts();
     } else if (term.length < 3) {
-      alert("3" + Strings.minimum_char);
+      OkAlert("3" + Strings.minimum_char, "");
       return false;
     } else {
       const queryString = ` query ($term:String!){searchProducts(term:$term) {
@@ -124,7 +126,7 @@ export default class Home extends Component {
         this.setState({ product_search: 1 });
         let responseData = data.response;
         if (data.status != 1) {
-          alert("No Products Found");
+          ///alert("No Products Found");
         } else {
           listItemProduct = responseData.searchProducts;
           console.log("homeProducts", responseData.searchProducts);
@@ -224,9 +226,9 @@ export default class Home extends Component {
         setData("cartItemCount", 0);
         removeData("customerOrder");
         global.cartCount = JSON.stringify(0);
-        setTimeout(function() {
+       // setTimeout(function() {
           loaderHandler.hideLoader();
-        }, 15);
+       // }, 15);
       }
     });
   }
@@ -325,11 +327,11 @@ export default class Home extends Component {
                         style={styles.fav_style}
                         onPress={() => this._changeFavorite(item)}
                       >
-                        <Image
+                        {/* <Image
                           style={styles.fav_style_icon}
                           resizeMode={"contain"}
                           source={item.like ? favImage[0] : favImage[1]}
-                        />
+                        /> */}
                       </TouchableOpacity>
                       <TouchableOpacity
                         onPress={() => this._selectProduct(item)}

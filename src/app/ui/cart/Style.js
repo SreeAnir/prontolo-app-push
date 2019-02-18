@@ -74,10 +74,10 @@ export default StyleSheet.create({
     fontSize: 10,
     ...Platform.select({
       ios: {
-        fontFamily: Strings.lSemiBold
+        fontFamily: Strings.lRegular
       },
       android: {
-        fontFamily: Strings.lSemiBold
+        fontFamily: Strings.lRegular
       }
     })
   },
@@ -127,11 +127,12 @@ export default StyleSheet.create({
 
   box1: {
     flex: 0.6,
-    flexDirection: "row"
+    flexDirection: "row",
   },
   box2: {
     flex: 0.15,
-    flexDirection: "row"
+    flexDirection: "row",
+  
   },
   box3: {
     alignSelf: "flex-start",
@@ -141,6 +142,7 @@ export default StyleSheet.create({
   },
 
   itemPriceStyle: {
+    marginLeft:5,
     alignSelf: "flex-start",
     marginBottom: 5,
     // marginRight: 10,
@@ -148,7 +150,7 @@ export default StyleSheet.create({
     // marginLeft: 15,
     color: "#3f846f",
     alignItems: "center",
-    fontSize: 12,
+    fontSize: 11,
     ...Platform.select({
       ios: {
         fontFamily: Strings.lSemiBold

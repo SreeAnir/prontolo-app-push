@@ -238,7 +238,7 @@ export default class ViewAddress extends Component {
                             styles.altriAddress
                           ]}
                         >
-                          {item.cap} {item.comune} {item.provincia}
+                          {item.cap}, {item.comune}, {item.provincia.toUpperCase()}
                         </Text>
                       </TouchableOpacity>
                     </View>
@@ -290,7 +290,7 @@ export default class ViewAddress extends Component {
                           {item.viaPiazza}
                         </Text>
                         <Text style={[styles.altriAddress]}>
-                          {item.cap} {item.comune} ({item.provincia})
+                          {item.cap}, {item.comune}, ({item.provincia})
                         </Text>
                       </TouchableOpacity>
                     </View>

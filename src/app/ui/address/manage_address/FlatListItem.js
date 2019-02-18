@@ -103,7 +103,7 @@ export default class FlatListItem extends Component {
                    {this.props.item.viaPiazza} {this.props.item.civico}
                 </Text>
                 <Text style={[styles.altriAddress]}>
-                {this.props.item.comune},{this.props.item.cap},{this.props.item.stato}
+                {this.props.item.comune}, {this.props.item.cap}, {this.props.item.stato}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -706,9 +706,7 @@ export default class AddressForm extends Component {
                         {this.state.primaryaddressDetails.civico}
                        </Text>
                       <Text style={[styles.altriAddress]}>
-                      {this.state.primaryaddressDetails.cap},
-                        {this.state.primaryaddressDetails.comune},
-                        {this.state.primaryaddressDetails.provincia}
+  {this.state.primaryaddressDetails.cap}, {this.state.primaryaddressDetails.comune}, {this.state.primaryaddressDetails.provincia}
                       </Text>
                     </TouchableOpacity>
                   </View>

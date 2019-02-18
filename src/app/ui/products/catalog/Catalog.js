@@ -85,7 +85,7 @@ export default class Catalog extends Component {
     if (this.state.search_term != "") {
       loaderHandler.showLoader(
         Strings.Searchingfor + " " + this.state.search_term
-      ); //
+      );
       this.props.navigation.navigate("catalogProducts", {
         productList: "",
         searchTerm: this.state.search_term,
@@ -233,7 +233,7 @@ export default class Catalog extends Component {
                   source={require("../../../../res/images/search.png")}
                   style={styles.searchIconStyle}
                 />
-                <TextInput 
+                <TextInput
                   returnKeyType={Platform.OS === "ios" ? "done" : "go"}
                   placeholderTextColor="#ffffff"
                   placeholder={Strings.home_search}

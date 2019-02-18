@@ -134,14 +134,17 @@ export default class OrderDetails extends Component {
     let OrderRecap = this.state.OrderRecap;
     let orderStatusString = Strings.CONFIRMED;
     let orderStatus = 1;
-
-    if (OrderRecap.state == "transit") {
-      orderStatus = 2;
-      let orderStatusString = Strings.IN_TRANSIT;
+    if (OrderRecap.state == "payed" || OrderRecap.state == "Forwarded") {
+      orderStatus = 1;
+      orderStatusString = Strings.CONFIRMED;
     }
-    if (OrderRecap.state == "delivered") {
+    if (OrderRecap.state == "Shipped") {
+      orderStatus = 2;
+      orderStatusString = Strings.IN_TRANSIT;
+    }
+    if (OrderRecap.state == "Received") {
       orderStatus = 3;
-      let orderStatusString = Strings.DELIVERED;
+      orderStatusString = Strings.DELIVERED;
     }
     if (OrderRecap != "") {
       listItem = OrderRecap.customerOrderRows;

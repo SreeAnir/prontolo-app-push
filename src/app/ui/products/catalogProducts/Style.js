@@ -279,7 +279,7 @@ export default StyleSheet.create({
     flexDirection: "row",
     height: 55,
     justifyContent: "center",
-    marginTop: 15,
+    marginTop:5,
     backgroundColor: "#2e7965"
   },
   buttonTextStyle: {
