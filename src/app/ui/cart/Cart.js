@@ -257,8 +257,9 @@ export default class Cart extends Component {
         prodList = dataResponse.getCustomerOrder;
         this.__renderCartresponse(prodList);
         // }
-      } else {//data.message 
-        this.setState({ error:Strings.no_product_cart});
+      } else {
+        //data.message
+        this.setState({ error: Strings.no_product_cart });
         prodList = "";
         setData("cartItemCount", 0);
         global.cartCount = 0;

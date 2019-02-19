@@ -19,6 +19,7 @@ target 'Prontolo' do
 pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
 pod 'React', :path => '../node_modules/react-native', :subspecs => [
     'RCTLinkingIOS',
+    'CxxBridge'
   ]
 
   end

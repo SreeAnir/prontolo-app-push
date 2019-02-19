@@ -61,7 +61,7 @@ export default StyleSheet.create({
     width: 33
   },
   itemNameStyle: {
-    width: WIDTH - 220,
+    width: WIDTH - 230,
     textAlign: "left",
     alignSelf: "flex-start",
     flexDirection: "column",
@@ -71,6 +71,7 @@ export default StyleSheet.create({
     marginTop: 5,
     marginBottom: 10,
     marginLeft: 2,
+    marginRight:10,
     fontSize: 10,
     ...Platform.select({
       ios: {
